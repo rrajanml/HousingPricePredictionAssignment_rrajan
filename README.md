@@ -25,19 +25,30 @@ You are required to model the price of houses with the available independent var
 
 ## Conclusions
 ### The variables significant in predicting the price of a house are:
-GrLivArea, OverallCond, OverallQual, Neighborhood_Crawfor, Functional, Exterior1st_BrkFace, SaleCondition_Alloca, CentralAir, TotalBsmtSF, Neighborhood_Somerst, TotalBsmtSF and Condition1_Norm
+
+- 1stFlrSF
+- 2ndFlrSF
+- OverallQual
+- OverallCond
+- SaleCondition_Partial
+- LotArea
+- BsmtFinSF1
+- SaleCondition_Normal
+- MSZoning_RL
+- Neighborhood_Somerst
 
 ### How well those variables describe the price of a house?
-- GrLivArea: If this variable increases by 1 square foot of house area above ground, the price will increase by 1.09 to 1.11 times.
-- OverallQual: if the overall material and finish of the house is Excellent, the price of house will increase by 1.08 to 1.13 times
-- Neighborhood_Crawfor: if Crawford is a nearby location, then the price of house will increase by 1.07 to 1.09 times
-- Functional: if the home functionality is typical, then the price of house will increase by 1.07 to 1.08 times
-- Exterior1st_BrkFace: if the exterior covering on the house is Brick Face, the price of house will increase by 1.07 to 1.08 times.
+- Unit Change in '1stFlrSF':
+  If the feature '1stFlrSF' increases by one unit (e.g., one square foot), the natural logarithm of the SalePrice will increase by approximately 0.124911, assuming all other features remain constant.
 
-However, we can deduct how well each variable describes the price of a house.
+- Negative Sign of the Coefficient:
+  Since the coefficient for '1stFlrSF' is positive (0.124911), this implies that an increase in the '1stFlrSF' feature is associated with an increase in the natural logarithm of the SalePrice. However, a negative sign in the coefficient signifies a negative correlation between the predictor and the target variable.
 
-### Optimal value of lambda for Ridge Regression = 10
-### Optimal value of lambda for Lasso = 0.001
+- Converting Predicted Values to Original Scale:
+  To get the predicted SalePrice values in the original scale (not the natural logarithm scale), we need to perform the antilog (exponentiation) on the predicted values.
+
+### Optimal value of lambda for Ridge Regression = 9
+### Optimal value of lambda for Lasso = 0.0001
 
 ## Technologies Used
 - Python     - version 3.8.3
